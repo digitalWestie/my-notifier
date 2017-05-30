@@ -1,4 +1,5 @@
 var request = require('request');
+var notifier = require('node-notifier');
 var result;
 
 var flattenObject = function(ob) {
@@ -21,12 +22,20 @@ var flattenObject = function(ob) {
   return toReturn;
 };
 
-var readPrice = function (opts, paramName){
+var readPrice = function (opts, paramName, conditionCb){
   request(options, function (error, response, body) {
     if (!error && response.statusCode == 200) {
+      
       result = JSON.parse(body);
       result = flattenObject(result);
-      console.log(result[paramName]);
+
+      if ((conditionCb == undefined) || (conditionCb(result[paramName]) == true)){
+        notifier.notify({
+          'title': 'ETH price drop',
+          'message': "USD:ETH has hit $" + result[paramName]
+        });
+      }
+
     }
   });
 };
@@ -44,5 +53,4 @@ var options = {
   method: 'GET'
 };
 
-options.uri = "https://api.coinbase.com/v2/exchange-rates?currency=ETH"
-readPrice(options, 'data.rates.USD');
+readPrice(options, 'data.rates.USD', function(val){ return (val<180.0) });

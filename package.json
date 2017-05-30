@@ -1,8 +1,12 @@
 {
   "name": "my-notifier",
   "version": "1.0.0",
-  "description": "A catch-all script to run with cron to scrape and notify you",
+  "description": "A catch-all script to run with cron to do stuff (e.g. scrape) and notify you",
   "main": "main.js",
+  "dependencies": {
+    "request": "^2.7.0",
+    "node-notifier": "^5.1.2"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
