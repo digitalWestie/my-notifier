@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 var request = require('request');
 var notifier = require('node-notifier');
 var result;
