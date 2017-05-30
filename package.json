@@ -1,0 +1,22 @@
+{
+  "name": "my-notifier",
+  "version": "1.0.0",
+  "description": "A catch-all script to run with cron to scrape and notify you",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/digitalWestie/my-notifier.git"
+  },
+  "keywords": [
+    "notifications"
+  ],
+  "author": "Rory Gianni",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/digitalWestie/my-notifier/issues"
+  },
+  "homepage": "https://github.com/digitalWestie/my-notifier#readme"
+}
