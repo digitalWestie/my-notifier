@@ -54,4 +54,4 @@ var options = {
   method: 'GET'
 };
 
-readPrice(options, 'data.rates.USD', function(val){ return (val<180.0) });
+readPrice(options, 'data.rates.USD', function(val){ return (val<230.0) });
